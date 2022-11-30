@@ -10,18 +10,20 @@
 
 <Configuration>
 
-  <Add OfficeClientEdition="64" Channel="Current" DownloadPath="C:\Users\decipher\Downloads">
+  <Add OfficeClientEdition="64" Channel="Current">
     <Product ID="O365ProPlusRetail">
       <Language ID="en-us" />
-      <ExcludeApp ID="Access" />
-      <ExcludeApp ID="Groove" />
-      <ExcludeApp ID="Lync" />
-      <ExcludeApp ID="OneDrive" />
-      <ExcludeApp ID="OneNote" />
-      <ExcludeApp ID="Outlook" />
-      <ExcludeApp ID="PowerPoint" />
-      <ExcludeApp ID="Publisher" />
-      <ExcludeApp ID="Teams" />
+        <!-- <ExcludeApp ID="Access" />
+        <ExcludeApp ID="Excel" />
+        <ExcludeApp ID="Groove" />
+        <ExcludeApp ID="Lync" />
+        <ExcludeApp ID="OneDrive" />
+        <ExcludeApp ID="OneNote" />
+        <ExcludeApp ID="Outlook" />
+        <ExcludeApp ID="PowerPoint"  />
+        <ExcludeApp ID="Publisher" />
+        <ExcludeApp ID="Teams" />
+        <ExcludeApp ID="Word" /> -->
     </Product>
   </Add>
 
