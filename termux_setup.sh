@@ -14,7 +14,7 @@ setup() {
     fish -c "set -U fish_greeting && set -g fish_greeting"
     echo -e "export USER=decipher\nstarship init fish | source" > "$HOME/.config/fish/config.fish"
     ls "$HOME/MyConfigs" > /dev/null 2>&1 || git clone "https://github.com/decipher3114/MyConfigs.git" --depth=1
-    rm "$HOME/.termux/termux.properties" > /dev/null 2>&1; ln -s "$HOME/MyConfigs/termux.properties" "$HOME/.termux/"
+    cp "$HOME/MyConfigs/termux.properties" "$HOME/.termux/"
     rm "$HOME/.config/starship.toml" > /dev/null 2>&1; ln -s "$HOME/MyConfigs/starship.toml" "$HOME/.config/"
 }
 
