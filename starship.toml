@@ -17,7 +17,7 @@ charging_symbol = "󰂇 "
 disabled = false
 discharging_symbol = "󱟟 "
 empty_symbol = "󰂎 "
-format = "[$symbol$percentage]($style) "
+format = "[$symbol][$percentage]($style) "
 full_symbol = "󰁹 "
 unknown_symbol = "󰂑 "
 
