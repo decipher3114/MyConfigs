@@ -24,19 +24,6 @@ symbol = "ﴃ "
 style = "blue bold"
 disabled = true
 
-[battery]
-full_symbol = " "
-charging_symbol = " "
-discharging_symbol = " "
-unknown_symbol = " "
-empty_symbol = " "
-disabled = false
-format = "[$symbol$percentage]($style) "
-
-[[battery.display]]
-threshold = 10
-style = "red bold"
-
 [buf]
 format = "with [$symbol($version )]($style)"
 version_format = "v${raw}"
