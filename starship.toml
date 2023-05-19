@@ -1003,7 +1003,7 @@ xonsh_indicator = "xsh"
 cmd_indicator = "cmd"
 unknown_indicator = ""
 style = "white bold"
-disabled = true
+disabled = false
 
 [shlvl]
 threshold = 2
