@@ -64,6 +64,7 @@ $nix_shell\
 $conda\
 $meson\
 $spack\
+$memory_usage\
 $aws\
 $gcloud\
 $openstack\
@@ -72,9 +73,8 @@ $env_var\
 $crystal\
 $custom\
 $sudo\
+$fill \
 $cmd_duration\
-$fill\
-$memory_usage\
 $time\
 $line_break\
 $jobs\
@@ -186,13 +186,13 @@ detect_files = [
 detect_folders = []
 
 [cmd_duration]
-min_time = 2000
+min_time = 10
 format = "[took](italic dimmed) [$duration]($style) "
 style = "yellow bold"
 show_milliseconds = false
 disabled = false
 show_notifications = false
-min_time_to_notify = 45000
+min_time_to_notify = 10
 
 [cobol]
 format = "[via](italic dimmed) [$symbol($version )]($style)"
@@ -656,10 +656,10 @@ detect_folders = ["lua"]
 
 [memory_usage]
 threshold = 0
-format = " [with](italic dimmed) $symbol[$ram]($style) "
+format = "[with](italic dimmed) $symbol[$ram]($style) "
 style = "white bold"
 symbol = "🐏 "
-disabled = false
+disabled = true
 
 [meson]
 truncation_length = 4294967295
@@ -761,7 +761,7 @@ disabled = false
 [os]
 format = "[$symbol]($style)"
 style = "bold white"
-disabled = true
+disabled = false
 
 [os.symbols]
 Alpaquita = "🔔 "
