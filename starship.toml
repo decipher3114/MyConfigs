@@ -1,13 +1,97 @@
 "$schema" = "https://starship.rs/config-schema.json"
-format = "$all"
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$fossil_branch\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$fill\
+$memory_usage\
+$time\
+$line_break\
+$jobs\
+$battery\
+$status\
+$os\
+$container\
+$shell\
+$character"""
 right_format = ""
-continuation_prompt = "[∙](bright-black) "
+continuation_prompt = "[∙](bright-white) "
 scan_timeout = 30
 command_timeout = 500
 add_newline = true
 
 [aws]
-format = '[on](dimmed) [$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
+format = '[on](italic dimmed) [$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
 symbol = "☁️  "
 style = "bold yellow"
 disabled = false
@@ -19,7 +103,7 @@ force_display = false
 [aws.profile_aliases]
 
 [azure]
-format = "[on](dimmed) [$symbol($subscription)]($style) "
+format = "[on](italic dimmed) [$symbol($subscription)]($style) "
 symbol = "ﴃ "
 style = "blue bold"
 disabled = true
@@ -39,7 +123,7 @@ detect_files = [
 detect_folders = []
 
 [bun]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "🍞 "
 style = "bold red"
@@ -52,7 +136,7 @@ detect_files = [
 detect_folders = []
 
 [c]
-format = "[via](dimmed) [$symbol($version(-$name) )]($style)"
+format = "[via](italic dimmed) [$symbol($version(-$name) )]($style)"
 version_format = "v${raw}"
 style = "149 bold"
 symbol = "C "
@@ -89,7 +173,7 @@ vimcmd_replace_one_symbol = "[←](bold purple)"
 disabled = false
 
 [cmake]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "△ "
 style = "bold blue"
@@ -103,7 +187,7 @@ detect_folders = []
 
 [cmd_duration]
 min_time = 2000
-format = "[took](dimmed) [$duration]($style) "
+format = "[took](italic dimmed) [$duration]($style) "
 style = "yellow bold"
 show_milliseconds = false
 disabled = false
@@ -111,7 +195,7 @@ show_notifications = false
 min_time_to_notify = 45000
 
 [cobol]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "⚙️ "
 style = "bold blue"
@@ -127,7 +211,7 @@ detect_folders = []
 
 [conda]
 truncation_length = 1
-format = "[via](dimmed) [$symbol$environment]($style) "
+format = "[via](italic dimmed) [$symbol$environment]($style) "
 symbol = "🅒 "
 style = "green bold"
 ignore_base = true
@@ -140,7 +224,7 @@ style = "red bold dimmed"
 disabled = false
 
 [crystal]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "🔮 "
 style = "bold red"
@@ -151,7 +235,7 @@ detect_folders = []
 
 [daml]
 symbol = "Λ "
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 style = "bold cyan"
 disabled = false
@@ -160,7 +244,7 @@ detect_files = ["daml.yaml"]
 detect_folders = []
 
 [dart]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "🎯 "
 style = "bold blue"
@@ -174,7 +258,7 @@ detect_files = [
 detect_folders = [".dart_tool"]
 
 [deno]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "🦕 "
 style = "green bold"
@@ -195,7 +279,7 @@ truncation_length = 3
 truncate_to_repo = true
 fish_style_pwd_dir_length = 0
 use_logical_path = true
-format = "[in](dimmed) [$path]($style)[$read_only]($read_only_style) "
+format = "[in](italic dimmed) [$path]($style)[$read_only]($read_only_style) "
 repo_root_format = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
 style = "cyan bold"
 disabled = false
@@ -210,7 +294,7 @@ use_os_path_sep = true
 [docker_context]
 symbol = "🐳 "
 style = "blue bold"
-format = "[via](dimmed) [$symbol$context]($style) "
+format = "[via](italic dimmed) [$symbol$context]($style) "
 only_with_files = true
 disabled = false
 detect_extensions = []
@@ -222,7 +306,7 @@ detect_files = [
 detect_folders = []
 
 [dotnet]
-format = "[via](dimmed) [$symbol($version )(🎯 $tfm )]($style)"
+format = "[via](italic dimmed) [$symbol($version )(🎯 $tfm )]($style)"
 version_format = "v${raw}"
 symbol = ".NET "
 style = "blue bold"
@@ -243,7 +327,7 @@ detect_files = [
 detect_folders = []
 
 [elixir]
-format = '[via](dimmed) [$symbol($version \(OTP $otp_version\) )]($style)'
+format = '[via](italic dimmed) [$symbol($version \(OTP $otp_version\) )]($style)'
 version_format = "v${raw}"
 symbol = "💧 "
 style = "bold purple"
@@ -253,7 +337,7 @@ detect_files = ["mix.exs"]
 detect_folders = []
 
 [elm]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "🌳 "
 style = "cyan bold"
@@ -269,7 +353,7 @@ detect_folders = ["elm-stuff"]
 [env_var]
 
 [erlang]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = " "
 style = "bold red"
@@ -282,7 +366,7 @@ detect_files = [
 detect_folders = []
 
 [fennel]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "🧅 "
 style = "bold green"
@@ -292,12 +376,12 @@ detect_files = []
 detect_folders = []
 
 [fill]
-style = "bold black"
-symbol = "."
+style = "dimmed"
+symbol = "—"
 disabled = false
 
 [fossil_branch]
-format = "[on](dimmed) [$symbol$branch]($style) "
+format = "[on](italic dimmed) [$symbol$branch]($style) "
 symbol = " "
 style = "bold purple"
 truncation_length = 9223372036854775807
@@ -305,7 +389,7 @@ truncation_symbol = "…"
 disabled = true
 
 [gcloud]
-format = '[on](dimmed) [$symbol$account(@$domain)(\($region\))]($style) '
+format = '[on](italic dimmed) [$symbol$account(@$domain)(\($region\))]($style) '
 symbol = "☁️  "
 style = "bold blue"
 disabled = false
@@ -315,7 +399,7 @@ disabled = false
 [gcloud.project_aliases]
 
 [git_branch]
-format = "[on](dimmed) [$symbol$branch(:$remote_branch)]($style) "
+format = "[on](italic dimmed) [$symbol$branch(:$remote_branch)]($style) "
 symbol = " "
 style = "bold purple"
 truncation_length = 9223372036854775807
@@ -372,7 +456,7 @@ ignore_submodules = false
 disabled = false
 
 [golang]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "🐹 "
 style = "bold cyan"
@@ -390,7 +474,7 @@ detect_files = [
 detect_folders = ["Godeps"]
 
 [gradle]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "🅶 "
 style = "bold bright-cyan"
@@ -404,13 +488,13 @@ detect_files = []
 detect_folders = ["gradle"]
 
 [guix_shell]
-format = "[via](dimmed) [$symbol]($style) "
+format = "[via](italic dimmed) [$symbol]($style) "
 symbol = "🐃 "
 style = "yellow bold"
 disabled = false
 
 [haskell]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "λ "
 style = "bold purple"
@@ -427,7 +511,7 @@ detect_files = [
 detect_folders = []
 
 [haxe]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "⌘ "
 style = "bold fg:202"
@@ -447,7 +531,7 @@ detect_folders = [
 ]
 
 [helm]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "⎈ "
 style = "bold white"
@@ -462,7 +546,7 @@ detect_folders = []
 [hg_branch]
 symbol = " "
 style = "bold purple"
-format = "[on](dimmed) [$symbol$branch(:$topic)]($style) "
+format = "[on](italic dimmed) [$symbol$branch(:$topic)]($style) "
 truncation_length = 9223372036854775807
 truncation_symbol = "…"
 disabled = true
@@ -477,9 +561,9 @@ disabled = false
 
 [java]
 disabled = false
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
-style = "red dimmed"
+style = "red"
 symbol = "☕ "
 detect_extensions = [
     "java",
@@ -511,7 +595,7 @@ style = "bold blue"
 disabled = false
 
 [julia]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "ஃ "
 style = "bold purple"
@@ -524,7 +608,7 @@ detect_files = [
 detect_folders = []
 
 [kotlin]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "🅺 "
 style = "bold blue"
@@ -560,7 +644,7 @@ style = "yellow bold"
 disabled = true
 
 [lua]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "🌙 "
 style = "bold blue"
@@ -571,22 +655,22 @@ detect_files = [".lua-version"]
 detect_folders = ["lua"]
 
 [memory_usage]
-threshold = 75
-format = "[via](dimmed) $symbol[$ram( | $swap)]($style) "
-style = "white bold dimmed"
+threshold = 0
+format = " [with](italic dimmed) $symbol[$ram]($style) "
+style = "white bold"
 symbol = "🐏 "
-disabled = true
+disabled = false
 
 [meson]
 truncation_length = 4294967295
 truncation_symbol = "…"
-format = "[via](dimmed) [$symbol$project]($style) "
+format = "[via](italic dimmed) [$symbol$project]($style) "
 symbol = "⬢ "
 style = "blue bold"
 disabled = false
 
 [nim]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "👑 "
 style = "yellow bold"
@@ -600,7 +684,7 @@ detect_files = ["nim.cfg"]
 detect_folders = []
 
 [nix_shell]
-format = '[via](dimmed) [$symbol$state( \($name\))]($style) '
+format = '[via](italic dimmed) [$symbol$state( \($name\))]($style) '
 symbol = "❄️  "
 style = "bold blue"
 impure_msg = "impure"
@@ -610,7 +694,7 @@ disabled = false
 heuristic = false
 
 [nodejs]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = " "
 style = "bold green"
@@ -632,7 +716,7 @@ detect_files = [
 detect_folders = ["node_modules"]
 
 [ocaml]
-format = '[via](dimmed) [$symbol($version )(\($switch_indicator$switch_name\) )]($style)'
+format = '[via](italic dimmed) [$symbol($version )(\($switch_indicator$switch_name\) )]($style)'
 version_format = "v${raw}"
 global_switch_indicator = ""
 local_switch_indicator = "*"
@@ -659,7 +743,7 @@ detect_folders = [
 ]
 
 [opa]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "🪖  "
 style = "bold blue"
@@ -669,7 +753,7 @@ detect_files = []
 detect_folders = []
 
 [openstack]
-format = '[on](dimmed) [$symbol$cloud(\($project\))]($style) '
+format = '[on](italic dimmed) [$symbol$cloud(\($project\))]($style) '
 symbol = "☁️  "
 style = "bold yellow"
 disabled = false
@@ -731,7 +815,7 @@ disabled = false
 version_format = "v${raw}"
 
 [perl]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "🐪 "
 style = "149 bold"
@@ -753,7 +837,7 @@ detect_files = [
 detect_folders = []
 
 [php]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "🐘 "
 style = "147 bold"
@@ -768,13 +852,13 @@ detect_folders = []
 [pijul_channel]
 symbol = " "
 style = "bold purple"
-format = "[on](dimmed) [$symbol$channel]($style) "
+format = "[on](italic dimmed) [$symbol$channel]($style) "
 truncation_length = 9223372036854775807
 truncation_symbol = "…"
 disabled = true
 
 [pulumi]
-format = "[via](dimmed) [$symbol($username@)$stack]($style) "
+format = "[via](italic dimmed) [$symbol($username@)$stack]($style) "
 version_format = "v${raw}"
 symbol = " "
 style = "bold 5"
@@ -782,7 +866,7 @@ disabled = false
 search_upwards = true
 
 [purescript]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "<=> "
 style = "bold white"
@@ -799,7 +883,7 @@ python_binary = [
     "python3",
     "python2",
 ]
-format = '[via](dimmed) [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+format = '[via](italic dimmed) [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 version_format = "v${raw}"
 style = "yellow bold"
 symbol = "🐍 "
@@ -817,7 +901,7 @@ detect_files = [
 detect_folders = []
 
 [raku]
-format = "[via](dimmed) [$symbol($version-$vm_version )]($style)"
+format = "[via](italic dimmed) [$symbol($version-$vm_version )]($style)"
 version_format = "${raw}"
 symbol = "🦋 "
 style = "149 bold"
@@ -833,7 +917,7 @@ detect_files = ["META6.json"]
 detect_folders = []
 
 [red]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "🔺 "
 style = "red bold"
@@ -846,7 +930,7 @@ detect_files = []
 detect_folders = []
 
 [rlang]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 style = "blue bold"
 symbol = "📐 "
@@ -862,7 +946,7 @@ detect_files = [".Rprofile"]
 detect_folders = [".Rproj.user"]
 
 [ruby]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "💎 "
 style = "bold red"
@@ -879,7 +963,7 @@ detect_variables = [
 ]
 
 [rust]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "🦀 "
 style = "bold red"
@@ -889,7 +973,7 @@ detect_files = ["Cargo.toml"]
 detect_folders = []
 
 [scala]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 disabled = false
 style = "red bold"
@@ -932,12 +1016,12 @@ disabled = true
 [singularity]
 symbol = ""
 format = '[$symbol\[$env\]]($style) '
-style = "blue bold dimmed"
+style = "blue bold"
 disabled = false
 
 [spack]
 truncation_length = 1
-format = "[via](dimmed) [$symbol$environment]($style) "
+format = "[via](italic dimmed) [$symbol$environment]($style) "
 symbol = "🅢 "
 style = "blue bold"
 disabled = false
@@ -966,7 +1050,7 @@ allow_windows = false
 disabled = true
 
 [swift]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "🐦 "
 style = "bold 202"
@@ -976,7 +1060,7 @@ detect_files = ["Package.swift"]
 detect_folders = []
 
 [terraform]
-format = "[via](dimmed) [$symbol$workspace]($style) "
+format = "[via](italic dimmed) [$symbol$workspace]($style) "
 version_format = "v${raw}"
 symbol = "💠 "
 style = "bold 105"
@@ -990,10 +1074,10 @@ detect_files = []
 detect_folders = [".terraform"]
 
 [time]
-format = "[at](dimmed) [$time]($style) "
+format = "[at](italic dimmed) [$time]($style) "
 style = "bold yellow"
 use_12hr = false
-disabled = true
+disabled = false
 utc_time_offset = "local"
 time_range = "-"
 
@@ -1005,7 +1089,7 @@ show_always = true
 disabled = false
 
 [vagrant]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "⍱ "
 style = "cyan bold"
@@ -1021,7 +1105,7 @@ format = "vcsh [$symbol$repo]($style) "
 disabled = false
 
 [vlang]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "V "
 style = "blue bold"
@@ -1035,7 +1119,7 @@ detect_files = [
 detect_folders = []
 
 [zig]
-format = "[via](dimmed) [$symbol($version )]($style)"
+format = "[via](italic dimmed) [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = "↯ "
 style = "bold yellow"
