@@ -1,7 +1,7 @@
 # My Configs
 
-## Termux setup
+## Only Termux setup
 
 ```
-bash <(curl -sL "https://raw.githubusercontent.com/decipher3114/MyConfigs/main/termux_setup.sh")
+curl -sL "https://raw.githubusercontent.com/decipher3114/MyConfigs/main/termux_setup.sh" | bash
 ```
