@@ -377,7 +377,7 @@ detect_folders = []
 
 [fill]
 style = "dimmed"
-symbol = "—"
+symbol = "─"
 disabled = false
 
 [fossil_branch]
