@@ -164,12 +164,12 @@ commands = [
 
 [character]
 format = "$symbol "
-success_symbol = "[](bold green)"
-error_symbol = "[](bold red)"
-vimcmd_symbol = "[](bold green)"
-vimcmd_visual_symbol = "[](bold yellow)"
-vimcmd_replace_symbol = "[](bold purple)"
-vimcmd_replace_one_symbol = "[](bold purple)"
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+vimcmd_visual_symbol = "[❮](bold yellow)"
+vimcmd_replace_symbol = "[❮](bold purple)"
+vimcmd_replace_one_symbol = "[❮](bold purple)"
 disabled = false
 
 [cmake]
@@ -186,7 +186,7 @@ detect_files = [
 detect_folders = []
 
 [cmd_duration]
-min_time = 10
+min_time = 500
 format = "[took](italic dimmed) [$duration]($style) "
 style = "yellow bold"
 show_milliseconds = false
@@ -275,18 +275,18 @@ detect_files = [
 detect_folders = []
 
 [directory]
-truncation_length = 3
-truncate_to_repo = true
+truncation_length = 20
+truncate_to_repo = false
 fish_style_pwd_dir_length = 0
 use_logical_path = true
-format = "[in](italic dimmed) [$path]($style)[$read_only]($read_only_style) "
+format = "[$path]($style)[$read_only]($read_only_style) "
 repo_root_format = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
 style = "cyan bold"
 disabled = false
 read_only = "🔒"
 read_only_style = "red"
-truncation_symbol = ""
-home_symbol = "🏠"
+truncation_symbol = "../"
+home_symbol = "~"
 use_os_path_sep = true
 
 [directory.substitutions]
@@ -377,7 +377,7 @@ detect_folders = []
 
 [fill]
 style = "dimmed"
-symbol = "─"
+symbol = " "
 disabled = false
 
 [fossil_branch]
@@ -761,7 +761,7 @@ disabled = false
 [os]
 format = "[$symbol]($style)"
 style = "bold white"
-disabled = false
+disabled = true
 
 [os.symbols]
 Alpaquita = "🔔 "
@@ -1003,7 +1003,7 @@ xonsh_indicator = "xsh"
 cmd_indicator = "cmd"
 unknown_indicator = ""
 style = "white bold"
-disabled = false
+disabled = true
 
 [shlvl]
 threshold = 2
@@ -1086,7 +1086,7 @@ format = "[$user]($style) "
 style_root = "red bold"
 style_user = "yellow bold"
 show_always = true
-disabled = false
+disabled = true
 
 [vagrant]
 format = "[via](italic dimmed) [$symbol($version )]($style)"
