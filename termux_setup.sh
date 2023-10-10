@@ -18,7 +18,13 @@ setup() {
     else
         git clone "https://github.com/decipher3114/MyConfigs.git" --depth=1
     fi
-    cp "$HOME/MyConfigs/termux.properties" "$HOME/.termux/"
+    cat << EOF >> "$HOME/.termux/termux.properties" 
+extra-keys =    [['~','/','-','_','UP','|','SHIFT'], \\
+                ['TAB','CTRL','$','LEFT','DOWN','RIGHT','ENTER']]
+allow-external-apps = true
+terminal-cursor-style = bar
+soft-keyboard-toggle-behaviour = enable/disable
+EOF
     rm "$HOME/.config/starship.toml" &> /dev/null; ln -s "$HOME/MyConfigs/starship.toml" "$HOME/.config/"
 }
 
