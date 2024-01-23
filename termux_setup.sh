@@ -28,5 +28,8 @@ EOF
     rm "$HOME/.config/starship.toml" &> /dev/null; ln -s "$HOME/MyConfigs/starship.toml" "$HOME/.config/"
 }
 
+ln -s "$HOME/MyConfigs/font.ttf" "$HOME/.termux/"
+ln -s "$HOME/MyConfigs/colors.properties" "$HOME/.termux/"
+
 setup
  
