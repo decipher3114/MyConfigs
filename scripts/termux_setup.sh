@@ -1,18 +1,15 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 get_pkgs() {
     pkg update
-    pkg upgrade -y
-    pkg install fish starship git -y
+    pkg upgrade -y -o Dpkg::Options::="--force-confnew"
+    pkg install fish starship git -y -o Dpkg::Options::="--force-confnew"
 }
 
 setup() {
     get_pkgs
     cd "$HOME" || true
     rm "$HOME/../usr/etc/motd"
-    chsh -s fish
-    fish -c "set -U fish_greeting && set -g fish_greeting"
-    echo -e "export USER=decipher\nstarship init fish | source" > "$HOME/.config/fish/config.fish"
     if ls "$HOME/MyConfigs" &> /dev/null; then
         cd "$HOME/MyConfigs" && git pull && cd "$HOME" || exit 1
     else
@@ -25,11 +22,10 @@ allow-external-apps = true
 terminal-cursor-style = bar
 soft-keyboard-toggle-behaviour = enable/disable
 EOF
-    rm "$HOME/.config/starship.toml" &> /dev/null; ln -s "$HOME/MyConfigs/starship.toml" "$HOME/.config/"
+    mkdir -p "$HOME/.config/" && rm -rf "$HOME/.config/"* && ln -sf "$HOME/MyConfigs/.config/"* "$HOME/.config/"
+    ln -sf "$HOME/MyConfigs/.termux/"* "$HOME/.termux/"
+    chsh -s fish
+    fish -c "set -U fish_greeting && set -g fish_greeting"
 }
 
-ln -s "$HOME/MyConfigs/font.ttf" "$HOME/.termux/"
-ln -s "$HOME/MyConfigs/colors.properties" "$HOME/.termux/"
-
 setup
- 

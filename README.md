@@ -1,13 +1,13 @@
 # My Configs
 
-## Only Termux setup
+## Termux setup
 
 ```
-curl -sL "https://raw.githubusercontent.com/decipher3114/MyConfigs/main/termux_setup.sh" | bash
+curl -sL "https://raw.githubusercontent.com/decipher3114/MyConfigs/main/scripts/termux_setup.sh" | bash
 ```
 
-## Quick starship.toml symlink
+## Debian/Ubuntu setup
 
 ```
-ln -s $HOME/MyConfigs/starship.toml $HOME/.config/
+curl -sL "https://raw.githubusercontent.com/decipher3114/MyConfigs/main/scripts/debian_setup.sh" | bash
 ```
